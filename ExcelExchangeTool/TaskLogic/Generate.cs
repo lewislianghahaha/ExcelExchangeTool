@@ -21,12 +21,12 @@ namespace ExcelExchangeTool.TaskLogic
         {
             //创建导出临时表
             var resultdt = dtTemp.Get_Exportdt();
-            //
+            //循环sourcedt各行的值
             for (var i = 0; i < sourcedt.Rows.Count; i++)
             {
                 //将id=11~34的色母记录放到Tempdt
                 tempdt = GetColorantDt(sourcedt.Rows[i]);
-                //
+                //根据获得的tempdt(色母临时表记录)
                 for (var id = 0; id < tempdt.Rows.Count; id++)
                 {
                     var newrow = resultdt.NewRow();
@@ -44,7 +44,7 @@ namespace ExcelExchangeTool.TaskLogic
                     newrow[11] = Convert.ToString(tempdt.Rows[id][0]);                                    //色母编码
                     newrow[12] = Convert.ToString(tempdt.Rows[id][1]);                                    //色母名称
                     newrow[13] = Convert.ToDecimal(tempdt.Rows[id][2]);                                   //色母量(克)
-                    newrow[14] = DBNull.Value;                                         //累积量(可不填)
+                    newrow[14] = DBNull.Value;                                                            //累积量(可不填)
                     newrow[15] = id == 0 ? (object)Convert.ToString(sourcedt.Rows[i][36]) : DBNull.Value; //制作人
                     newrow[16] = id == 0 ? (object)Convert.ToString(sourcedt.Rows[i][37]) : DBNull.Value; //备注
                     newrow[17] = id == 0 ? (object)Convert.ToString(sourcedt.Rows[i][38]) : DBNull.Value; //信息说明
@@ -71,18 +71,18 @@ namespace ExcelExchangeTool.TaskLogic
                 //当碰到‘色母编码’为空即跳过,但j继续自增
                 if (Convert.ToString(rows[j + 0]) == "")
                 {
-                    j++;//j下标值自增1(重)
+                    j++;   //j下标值自增1(重)
                     continue;
                 }
                 else
                 {
                     var newrow = dt.NewRow();
-                    newrow[0] = Convert.ToString(rows[j + 0]);       //色母编码
-                    newrow[1] = DBNull.Value;                        //色母名称
+                    newrow[0] = Convert.ToString(rows[j + 0]);                        //色母编码
+                    newrow[1] = DBNull.Value;                                         //色母名称
                     newrow[2] = Convert.ToString(rows[j + 0 + 1]) == ""
-                        ? (object)DBNull.Value : Convert.ToDecimal(rows[j + 0 + 1]);      //色母量(克)
+                        ? (object)DBNull.Value : Convert.ToDecimal(rows[j + 0 + 1]);  //色母量(克)
                     dt.Rows.Add(newrow);
-                    j++;  //j下标值自增1(重)
+                    j++;                                                              //j下标值自增1(重)
                 }
             }
             return dt;
