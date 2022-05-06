@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.btnimport = new System.Windows.Forms.Button();
-            this.llink = new System.Windows.Forms.LinkLabel();
             this.Menu = new System.Windows.Forms.MenuStrip();
             this.tmclose = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,17 +44,6 @@
             this.btnimport.TabIndex = 0;
             this.btnimport.Text = "导入Excel文档";
             this.btnimport.UseVisualStyleBackColor = true;
-            // 
-            // llink
-            // 
-            this.llink.AutoSize = true;
-            this.llink.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.llink.Location = new System.Drawing.Point(0, 119);
-            this.llink.Name = "llink";
-            this.llink.Size = new System.Drawing.Size(77, 12);
-            this.llink.TabIndex = 1;
-            this.llink.TabStop = true;
-            this.llink.Text = "导入模板下载";
             // 
             // Menu
             // 
@@ -90,7 +78,6 @@
             this.ClientSize = new System.Drawing.Size(232, 131);
             this.ControlBox = false;
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.llink);
             this.Controls.Add(this.btnimport);
             this.Controls.Add(this.Menu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -107,7 +94,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnimport;
-        private System.Windows.Forms.LinkLabel llink;
         private System.Windows.Forms.MenuStrip Menu;
         private System.Windows.Forms.ToolStripMenuItem tmclose;
         private System.Windows.Forms.Label label1;

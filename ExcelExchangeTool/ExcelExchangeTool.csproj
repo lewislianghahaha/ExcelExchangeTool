@@ -87,6 +87,7 @@
     <Compile Include="TaskLogic\ExportDt.cs" />
     <Compile Include="TaskLogic\Generate.cs" />
     <Compile Include="TaskLogic\ImportDt.cs" />
+    <Compile Include="TaskLogic\Logic.cs" />
     <EmbeddedResource Include="Load.resx">
       <DependentUpon>Load.cs</DependentUpon>
     </EmbeddedResource>
