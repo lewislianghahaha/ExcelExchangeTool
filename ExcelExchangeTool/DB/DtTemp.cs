@@ -259,11 +259,11 @@ namespace ExcelExchangeTool.DB
                         dc.DataType = Type.GetType("System.String");
                         break;
                     case 16:
-                        dc.ColumnName = "备注";
+                        dc.ColumnName = "信息说明";
                         dc.DataType = Type.GetType("System.String");
                         break;
                     case 17:
-                        dc.ColumnName = "信息说明";
+                        dc.ColumnName = "备注"; 
                         dc.DataType = Type.GetType("System.String");
                         break;
                 }

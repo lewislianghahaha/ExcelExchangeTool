@@ -46,8 +46,8 @@ namespace ExcelExchangeTool.TaskLogic
                     newrow[13] = Convert.ToDecimal(tempdt.Rows[id][2]);                                   //色母量(克)
                     newrow[14] = DBNull.Value;                                                            //累积量(可不填)
                     newrow[15] = id == 0 ? (object)Convert.ToString(sourcedt.Rows[i][36]) : DBNull.Value; //制作人
-                    newrow[16] = id == 0 ? (object)Convert.ToString(sourcedt.Rows[i][37]) : DBNull.Value; //备注
-                    newrow[17] = id == 0 ? (object)Convert.ToString(sourcedt.Rows[i][38]) : DBNull.Value; //信息说明
+                    newrow[16] = id == 0 ? (object)Convert.ToString(sourcedt.Rows[i][38]) : DBNull.Value; //信息说明
+                    newrow[17] = id == 0 ? (object)Convert.ToString(sourcedt.Rows[i][37]) : DBNull.Value; //备注
                     resultdt.Rows.Add(newrow);
                 }
                 //每行结束后将Temp记录删除
